@@ -7,8 +7,15 @@ Sampling raster data with a fast (Numpy) random coordinates generator. Output is
 - Using Fiona + Shapely to handle vector data.
 - Two flavors to sample raster data: Rasterio and GDAL (gdallocationinfo). Rasterio is ultrafast (it is the best choice for big samples).
 
-## Usage
+## Requirements
+- Numpy
+- Fiona
+- Shapely
+- Rasterio
+- Pyprind
+- GDAL
 
+## Usage
 Random coordinates generation with raster sampling (using Rasterio = ultrafast sampling):
 ```python
 from rasterrandomsampling import RasterRandSampl

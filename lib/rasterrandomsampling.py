@@ -56,6 +56,7 @@ class RasterRandSampl(object):
 
         return logging.getLogger()
 
+
     def randLatLon(self, bbox, sz, prec, seed=None, paired=True):
         """
         Latitude/Longitude random generator
@@ -120,6 +121,7 @@ class RasterRandSampl(object):
         """
         try:
             self.logger.info("Exporting sample to Shapefile...")
+
             if isinstance(raster_sampling, tuple):
                 self.logger.info("Sampling values on rasterfile...")
 
