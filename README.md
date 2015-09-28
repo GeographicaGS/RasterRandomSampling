@@ -2,7 +2,7 @@
 Sampling raster data with a fast (Numpy) random coordinates generator. Output is a Shapefile.
 
 Performance:
-[IPython notebook]](https://github.com/GeographicaGS/RasterRandomSampling/blob/master/raster_random_sampling.ipynb)
+[IPython notebook](https://github.com/GeographicaGS/RasterRandomSampling/blob/master/raster_random_sampling.ipynb)
 
 ## Main features
 - Using Numpy to generate random coordinates.
