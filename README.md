@@ -1,6 +1,9 @@
 # Raster Random Sampling
 Sampling raster data with a fast (Numpy) random coordinates generator. Output is a Shapefile.
 
+Performance:
+[IPython notebook]](https://github.com/GeographicaGS/RasterRandomSampling/blob/master/raster_random_sampling.ipynb)
+
 ## Main features
 - Using Numpy to generate random coordinates.
 - You can seed the generator.
@@ -21,13 +24,17 @@ Random coordinates generation with raster sampling (using Rasterio = ultrafast s
 from rasterrandomsampling import RasterRandSampl
 
 def runTest():
-    rcg = RasterRandSampl()
+rcg = RasterRandSampl()
 
-    bbox = (90., 180., -90., -180.)
+bbox = (90., 180., -90., -180.)
 
-    res = rcg.randLatLon(bbox, 1000, 10)
+res = rcg.randLatLon(bbox, 1000, 10)
 
-    rcg.createShp("/tmp/out_rnd_rasterio.shp", res, raster_sampling=("data/raster_test.tif", "rasterio"))
+rst_smp = ("data/raster_test.tif", "rasterio")
+
+outputfile = "/tmp/out_rnd_rasterio.shp"
+
+rcg.createShp(outputfile, res, raster_sampling=rst_smp)
 
 if __name__ == '__main__':
     runTest()
@@ -44,7 +51,11 @@ def runTest():
 
     res = rcg.randLatLon(bbox, 1000, 10)
 
-    rcg.createShp("/tmp/out_rnd_gdal.shp", res, raster_sampling=("data/raster_test.tif", "gdal"))
+    rst_smp = ("data/raster_test.tif", "gdal")
+
+    outputfile = "/tmp/out_rnd_gdal.shp"
+
+    rcg.createShp(outputfile, res, raster_sampling=rst_smp)
 
 if __name__ == '__main__':
     runTest()
@@ -61,7 +72,9 @@ def runTest():
 
     res = rcg.randLatLon(bbox, 1000, 10, seed=1)
 
-    rcg.createShp("/tmp/out_rnd.shp", res, raster_sampling=None)
+    outputfile = "/tmp/out_rnd.shp"
+
+    rcg.createShp(outputfile, res, raster_sampling=None)
 
 if __name__ == '__main__':
     runTest()
@@ -78,7 +91,9 @@ def runTest():
 
     res = rcg.randLatLon(bbox, 1000, 10)
 
-    rcg.createShp("/tmp/out_rnd.shp", res, raster_sampling=None)
+    outputfile = "/tmp/out_rnd.shp"
+
+    rcg.createShp(outputfile, res, raster_sampling=None)
 
 if __name__ == '__main__':
     runTest()
