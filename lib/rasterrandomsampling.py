@@ -90,8 +90,8 @@ class RasterRandSampl(object):
 
             lat_max, lon_max, lat_min, lon_min = bbox
 
-            lat = np.linspace(lat_max, lat_min, (180. * prec) + 1)
-            lon = np.linspace(lon_min, lon_max, (360. * prec) + 1)
+            lat = np.linspace(lat_max, lat_min, (abs(lat_min - lat_max) * prec) + 1)
+            lon = np.linspace(lon_min, lon_max, (abs(lon_min - lon_max) * prec) + 1)
 
             rnd_coord = np.array((np.random.choice(lat, sz), np.random.choice(lon, sz)))
 
