@@ -24,15 +24,15 @@ from rasterrandomsampling import RasterRandSampl
 def runTest():
     rcg = RasterRandSampl()
 
-    bbox = (90., 180., -90., -180.)
+    # bbox = (90., 180., -90., -180.)
     # bbox = (20., 20., -20., -20.)
-    # bbox = (42., 10., 32., -10.)
+    bbox = (42., 10., 32., -10.)
 
     # res = rcg.randLatLon(bbox, 10, 1)
     # res = rcg.randLatLon(bbox, 10, 2)
     # res = rcg.randLatLon(bbox, 10, 0.5)
     # res = rcg.randLatLon(bbox, 10, 4)
-    res = rcg.randLatLon(bbox, 1000, 10)
+    res = rcg.randLatLon(bbox, 100, 10)
     # res = rcg.randLatLon(bbox, 1000, 10, seed=1)
 
     # rcg.createShp("/tmp/out_rnd.shp", res, raster_sampling=None)
